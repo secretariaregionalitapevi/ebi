@@ -174,20 +174,32 @@
                 btn.removeAttribute('onclick');
               });
 
+              const firstName = (profileData.full_name || 'Usuário').trim().split(' ')[0];
+
               Swal.fire({
                 title: 'Acesso Restrito',
-                html: `<div style="text-align: left; font-size: 14px; line-height: 1.6; color: #475569;">
-                        <p style="margin-bottom: 12px;">Olá, <strong>${profileData.full_name || 'Usuário'}</strong>!</p>
-                        <p style="margin-bottom: 12px;">Seu nível de acesso atual (<strong>${profileData.cargo || 'Candidato'}</strong>) não possui permissão para realizar novos lançamentos no aplicativo do EBI.</p>
-                        <p style="margin-bottom: 12px; font-weight: 600; color: #b91c1c;">⚠️ Lançamentos nesta seção são permitidos apenas para a Coordenação e Instrutores habilitados.</p>
-                        <p style="margin-top: 15px; font-size: 13px; color: #64748b;">Se você acredita que isso é um erro, entre em contato com o Secretário Regional da Música.</p>
+                html: `<div style="text-align: left; font-size: 14.5px; line-height: 1.6; color: #475569;">
+                        <p style="margin-bottom: 14px; font-size: 16px;">Olá, <strong>${firstName}</strong>!</p>
+                        <p style="margin-bottom: 14px;">Seu nível de acesso atual (<strong>${profileData.cargo || 'Candidato'}</strong>) não possui permissão para realizar novos lançamentos no aplicativo do EBI.</p>
+                        <p style="margin-bottom: 14px; font-weight: 600; color: #dc2626; display: flex; align-items: flex-start; gap: 8px;">
+                          <span style="font-size: 18px; line-height: 1;">⚠️</span>
+                          <span>Lançamentos nesta seção são permitidos apenas para a Coordenação e Instrutores habilitados.</span>
+                        </p>
+                        <p style="margin-top: 18px; font-size: 13px; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 12px;">
+                          Se você acredita que isso é um erro, entre em contato com o Secretário Regional da Música.
+                        </p>
                        </div>`,
                 icon: 'warning',
-                showConfirmButton: false,
-                allowOutsideClick: false,
-                allowEscapeKey: false,
-                background: 'rgba(255, 255, 255, 0.95)',
-                backdrop: `rgba(15, 23, 42, 0.85)`
+                iconColor: '#f59e0b',
+                showCloseButton: true,
+                showConfirmButton: true,
+                confirmButtonText: 'Entendido',
+                confirmButtonColor: '#003049',
+                background: '#ffffff',
+                backdrop: `rgba(15, 23, 42, 0.75)`,
+                customClass: {
+                  popup: 'premium-popup'
+                }
               });
             }
 

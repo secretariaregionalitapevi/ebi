@@ -40,7 +40,7 @@ let SUPABASE_URL = process.env.SUPABASE_URL || "";
 let SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY || "";
 let SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
 
-// Auto-correção dinâmica para alinhar com a base unificada de todas as aplicações
+// Autocorrecao dinamica para alinhar com a base unificada de todas as aplicacoes
 if (!SUPABASE_URL || !SUPABASE_URL.includes("sqamxlhfazulrisiptud")) {
   SUPABASE_URL = "https://sqamxlhfazulrisiptud.supabase.co";
   SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNxYW14bGhmYXp1bHJpc2lwdHVkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjczNzU4ODQsImV4cCI6MjA4Mjk1MTg4NH0.UmshkDqIgJQYVMmWVVgmfQm-YacUbRBeSpmYsNG0baE";
@@ -677,6 +677,7 @@ function routeToPage(rawPathname) {
   if (p === "/") return "index.html";
   if (p === "/login.html" || p === "/login") return "login.html";
   if (p === "/registro.html" || p === "/registro") return "registro.html";
+  if (p === "/privacidade.html" || p === "/privacidade") return "privacidade.html";
   if (p === "/cadastro.html" || p === "/cadastro") return "cadastro.html";
   if (p === "/cadastro/crianca") return "cadastro.html";
   if (p === "/cadastro/monitor") return "cadastro.html";
